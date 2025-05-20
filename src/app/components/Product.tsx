@@ -1,7 +1,6 @@
 import { ProductType } from "../types/ProductType";
 import ProductImage from "./ProductImage";
 import { formatPrice } from "../libs/utils";
-import Link from "next/link";
 type ProductProps = {
     product: ProductType
 }

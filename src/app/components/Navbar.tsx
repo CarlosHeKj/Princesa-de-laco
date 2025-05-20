@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react'; // Importar useState
-import Link from "next/link";
 import Image from "next/image";
 import { FiMenu } from 'react-icons/fi';
 
 import { useRouter } from 'next/navigation'; 
 import SearchBar from "./search";
 import logo from "../assets/logo.png";
+import Link from 'next/link';
 
 function Navbar() {
   
@@ -58,7 +58,7 @@ function Navbar() {
       <div
         className={`transition-all  duration-500 ease-in-out  mt-16 p-4 overflow-hidden ${menuOpen ? 'md:max-h-screen' : 'max-h-0 opacity-0'}`}
       >
-        <ul className='flex flex-row max-h-full gap-2'><li className='text-gray-400 cursor-pointer'><a href='/'>princcesa 1</a></li><li className='text-gray-400 cursor-pointer'><a href='/'>princcesa 2</a></li><li className='text-gray-400 cursor-pointer'><a href='/'>princcesa 3</a></li><li className='text-gray-400 cursor-pointer'><a href='/'>princcesa 4</a></li><li className='text-gray-400 cursor-pointer'><a href='/'>princcesa 5</a></li><li className='text-gray-400 cursor-pointer'><a href='/'>princcesa 1</a></li><li className='text-gray-400 cursor-pointer'><a href='/'>princcesa 1</a></li><li className='text-gray-400 cursor-pointer'><a href='/'>princcesa 1</a></li></ul>
+        <ul className='flex flex-row max-h-full gap-2'><li className='text-gray-400 cursor-pointer'><Link href='/'>princcesa 1</Link></li><li className='text-gray-400 cursor-pointer'><Link href='/'>princcesa 2</Link></li><li className='text-gray-400 cursor-pointer'><Link href='/'>princcesa 3</Link></li></ul>
         {/* Aqui você pode colocar os conteúdos adicionais ou links do menu */}
       </div>
     </div>

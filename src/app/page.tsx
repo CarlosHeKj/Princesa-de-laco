@@ -1,7 +1,5 @@
 import { ProductType } from "./types/ProductType";
 import Product from "./components/Product";
-import Image from "next/image";
-import Link from "next/link";
 import { getProducts } from "./libs/stripeUtil";
 
 // Componente principal
