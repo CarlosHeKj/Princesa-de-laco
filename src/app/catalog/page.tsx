@@ -44,23 +44,24 @@ export default function Catalog() {
   }, []);
 
   const applyFilters = useCallback(() => {
-    const filtered = products.filter((product) => {
-      const matchesSearch = product.description
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase());
+  const filtered = products.filter((product) => {
+    const matchesSearch =
+      searchTerm.trim() === '' ||
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchTerm.toLowerCase());
 
-      const matchesFilters =
-        selectedFilters.length === 0 ||
-        selectedFilters.includes("Todos") ||
-        selectedFilters.some((filter) =>
-          product.description.toLowerCase().includes(filter.toLowerCase())
-        );
+    const matchesFilters =
+      selectedFilters.length === 0 ||
+      selectedFilters.includes("Todos") ||
+      selectedFilters.some((filter) =>
+        product.description.toLowerCase().includes(filter.toLowerCase())
+      );
 
-      return matchesSearch && matchesFilters;
-    });
+    return matchesSearch && matchesFilters;
+  });
 
-    setFilteredProducts(filtered);
-  }, [products, searchTerm, selectedFilters]);
+  setFilteredProducts(filtered);
+}, [products, searchTerm, selectedFilters]);
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = event.target;
