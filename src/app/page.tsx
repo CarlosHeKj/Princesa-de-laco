@@ -29,9 +29,9 @@ export default async function Home() {
      
 
       <div className="max-w-7xl mx-auto pt-8 px-8 xl:px-0 ">
-        <h1 className="font-bold text-2xl mt-20">Produtos abaixo de R$50,00</h1>
+        <h1 className="font-bold text-2xl mt-20">Vestidos de princesas</h1>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 xl:gap-6">
-          {ProductsList(0, 50)}
+          {ProductsList(0, 50000)}
         </div>
 
         

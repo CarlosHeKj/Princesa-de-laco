@@ -58,7 +58,7 @@ function Navbar() {
       <div
         className={`transition-all  duration-500 ease-in-out  mt-16 p-4 overflow-hidden ${menuOpen ? 'md:max-h-screen' : 'max-h-0 opacity-0'}`}
       >
-        <ul className='flex flex-row max-h-full gap-2'><li className='text-gray-400 cursor-pointer'><Link href='/'>princcesa 1</Link></li><li className='text-gray-400 cursor-pointer'><Link href='/'>princcesa 2</Link></li><li className='text-gray-400 cursor-pointer'><Link href='/'>princcesa 3</Link></li></ul>
+        <ul className='flex flex-row max-h-full gap-2'><li className='text-gray-400 cursor-pointer'><Link href='/catalog'>princcesa 1</Link></li><li className='text-gray-400 cursor-pointer'><Link href='/catalog'>princcesa 2</Link></li><li className='text-gray-400 cursor-pointer'><Link href='/catalog'>princcesa 3</Link></li></ul>
         {/* Aqui você pode colocar os conteúdos adicionais ou links do menu */}
       </div>
     </div>
