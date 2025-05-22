@@ -2,3 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.scroll-thumb-rounded {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255, 175, 255) transparent; /* para Firefox */
+}
+
+/* Chrome, Safari, Edge */
+.scroll-thumb-rounded::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-thumb-rounded::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-thumb-rounded::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 175, 255);
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Mostrar apenas ao interagir */
+.scroll-thumb-rounded:hover::-webkit-scrollbar-thumb,
+.scroll-thumb-rounded:active::-webkit-scrollbar-thumb,
+.scroll-thumb-rounded:focus::-webkit-scrollbar-thumb,
+.scroll-thumb-rounded::-webkit-scrollbar-thumb:hover {
+  opacity: 1;
+}

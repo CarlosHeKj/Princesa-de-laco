@@ -30,9 +30,13 @@ export default async function Home() {
 
       <div className="max-w-7xl mx-auto pt-8 px-8 xl:px-0 ">
         <h1 className="font-bold text-2xl mt-20">Vestidos de princesas</h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10 xl:gap-6">
-          {ProductsList(0, 50000)}
-        </div>
+  <div className="flex overflow-x-auto space-x-6 scroll-smooth px-4 py-2 scroll-thumb-rounded">
+  {ProductsList(0, 50000).map((product, index) => (
+    <div key={index} className="min-w-[250px] flex-shrink-0">
+      {product}
+    </div>
+  ))}
+</div>
 
         
       </div>
