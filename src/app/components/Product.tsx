@@ -11,21 +11,21 @@ export default function Product({product}: ProductProps) {
     
     return (
      
-<div className="flex flex-row flex-col h-auto shadow-lg  w-[300px] bg-white rounded-lg relative h-[400px] ">
+<div className="flex  flex-col  shadow-lg w-[100px] h-[130px]  md:w-[300px] bg-white rounded-lg relative md:h-[400px] p-1 ">
 
-  <div className="relative h-32 w-24 w-full h-64 mt-20 mt-1  object-cover flex justify-center">
+  <div className="relative  w-full h-[60px] md:h-64  mt-1  object-cover flex md:justify-center">
     <ProductImage product={product}  />
   </div>
  
 
-  <div className="flex flex-col justify-between flex-1 overflow-hidden overflow-visible">
+  <div className="flex flex-col justify-between flex-1 mx-1 md:mx-5  overflow-visible">
   
-    <div className="flex justify-between font-bold my-3 text-black p-5 p-0 text-start ml-1 line-clamp-2 hover:text-purple-500 z-20">
+    <div className="flex justify-between font-bold my-1 text-black  text-start ml-1 line-clamp-2 hover:text-purple-500 z-20">
       {product.name}
     </div>
     
     
-    <div   className="flex p-5 justify-between items-center relative">
+    <div   className="flex p-1 justify-between items-center relative">
  <div className="text-purple-600 font-bold">
         <p> {formatPrice(product.price)}</p>
       </div>

@@ -28,11 +28,28 @@ export default async function Home() {
     <div>
      
 
-      <div className="max-w-7xl mx-auto pt-8 px-8 xl:px-0 ">
+      <div className="max-w-7xl mx-auto md:pt-8 md:px-8 pt-1  px-0 xl:px-0 ">
         <h1 className="font-bold text-2xl mt-20">Vestidos de princesas</h1>
-  <div className="flex overflow-x-auto space-x-6 scroll-smooth px-4 py-2 scroll-thumb-rounded">
+  <div className="flex overflow-x-auto space-x-6 scroll-smooth px-1 py-2 scroll-thumb-rounded">
   {ProductsList(0, 50000).map((product, index) => (
-    <div key={index} className="min-w-[250px] flex-shrink-0">
+    <div key={index} className="flex-shrink-0">
+      {product}
+    </div>
+  ))}
+</div>
+
+   <h1 className="font-bold text-2xl mt-20">Roupas de principes</h1>
+  <div className="flex overflow-x-auto space-x-6 scroll-smooth px-1 py-2 scroll-thumb-rounded">
+  {ProductsList(0, 50000).map((product, index) => (
+    <div key={index} className="flex-shrink-0">
+      {product}
+    </div>
+  ))}
+</div>
+   <h1 className="font-bold text-2xl mt-20">Vestidos temáticos</h1>
+  <div className="flex overflow-x-auto space-x-6 scroll-smooth px-1 py-2 scroll-thumb-rounded">
+  {ProductsList(0, 50000).map((product, index) => (
+    <div key={index} className="flex-shrink-0">
       {product}
     </div>
   ))}
