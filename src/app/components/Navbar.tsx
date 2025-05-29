@@ -14,7 +14,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
 
-  const { cart } = useCart();  // Ajustado para 'cart'
+  const { cart } = useCart();
 
   const handleSearch = (searchTerm: string) => {
     if (searchTerm.trim()) {
@@ -41,7 +41,7 @@ function Navbar() {
         <SearchBar onSearch={handleSearch} />
 
         <div className="flex items-center gap-4 relative">
-          <button onClick={() => setCartOpen(!cartOpen)} className="relative">
+          <button onClick={() => setCartOpen(!cartOpen)} className="relative z-50">
             <FiShoppingCart size={24} color="black" />
             {cart.length > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
@@ -50,8 +50,9 @@ function Navbar() {
             )}
           </button>
 
+          {/* Dropdown do carrinho posicionado logo abaixo da navbar */}
           {cartOpen && (
-            <div className="absolute right-0 mt-2 w-80 bg-white shadow-xl rounded-lg p-4 z-50 border">
+            <div className="absolute right-0 top-full mt-1 w-80 bg-white shadow-xl rounded-lg p-4 z-50 border">
               <h2 className="font-bold text-lg mb-2">Carrinho</h2>
               {cart.length === 0 ? (
                 <p className="text-gray-500">Seu carrinho está vazio.</p>
