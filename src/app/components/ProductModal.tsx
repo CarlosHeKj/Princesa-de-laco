@@ -25,7 +25,7 @@ export default function ProductModal({ product, onClose }: ModalProps) {
           ✕
         </button>
 
-        <div className="w-full h-64 flex justify-center items-center mb-4">
+        <div className="w-full h-40 flex justify-center items-center mb-4">
           <ProductImage product={product} />
         </div>
 
