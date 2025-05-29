@@ -20,12 +20,12 @@ export default function ProductModal({ product, onClose }: ModalProps) {
       <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 relative">
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-gray-500 hover:text-black text-xl"
+          className="absolute top-2 right-2 text-red-600 hover:text-black text-xl"
         >
           ✕
         </button>
 
-        <div className="w-full h-40 flex justify-center items-center mb-4">
+        <div className="w-full h-full flex justify-center items-center mb-4">
           <ProductImage product={product} />
         </div>
 
@@ -35,6 +35,7 @@ export default function ProductModal({ product, onClose }: ModalProps) {
           {formatPrice(product.price)}
         </p>
 
+      
         <button
           onClick={() => {
             addToCart(product);

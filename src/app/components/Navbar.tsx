@@ -94,9 +94,9 @@ function Navbar() {
         className={`transition-all duration-500 ease-in-out mt-16 p-4 overflow-hidden ${menuOpen ? 'md:max-h-screen' : 'max-h-0 opacity-0'}`}
       >
         <ul className='flex flex-row max-h-full gap-2'>
-          <li className='text-gray-400 cursor-pointer'><Link href='/catalog'>Princesa 1</Link></li>
-          <li className='text-gray-400 cursor-pointer'><Link href='/catalog'>Princesa 2</Link></li>
-          <li className='text-gray-400 cursor-pointer'><Link href='/catalog'>Princesa 3</Link></li>
+          <li className='text-gray-400 cursor-pointer'><Link href='/catalog'>Atacado 1</Link></li>
+          <li className='text-gray-400 cursor-pointer'><Link href='/catalog'>Atacado 2</Link></li>
+          <li className='text-gray-400 cursor-pointer'><Link href='/catalog'>Atacado 3</Link></li>
         </ul>
       </div>
     </div>

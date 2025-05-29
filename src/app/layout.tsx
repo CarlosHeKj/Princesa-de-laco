@@ -33,7 +33,7 @@ export default function RootLayout({
         <Hydrate>
           <CartProvider> {/* ✅ envolve aqui */}
             <Navbar />
-            <main className="bg-gray-100">{children}</main>
+            <main className="bg-pink-100">{children}</main>
           </CartProvider>
         </Hydrate>
       </body>
