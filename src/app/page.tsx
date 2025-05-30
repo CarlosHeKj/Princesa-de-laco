@@ -1,13 +1,13 @@
 // app/page.tsx ou ./Home.tsx
 import { ProductType } from "./types/ProductType";
-import { getProducts } from "./libs/stripeUtil";
+import { getAllProducts } from "./libs/stripeUtil";
 import ProductSection from "./components/ProductSection";
 
 export default async function Home() {
   let products: ProductType[] = [];
 
   try {
-    products = await getProducts();
+    products = await getAllProducts();
   } catch (error) {
     console.error("Falha ao carregar produtos:", error);
   }
