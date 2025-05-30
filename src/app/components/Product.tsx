@@ -19,8 +19,8 @@ export default function Product({ product, onClick }: ProductProps) {
       </div>
 
       <div className="flex flex-col justify-between flex-1 mx-1 md:mx-5 overflow-visible">
-        <div className="flex justify-between font-bold my-1 text-black text-start ml-1 line-clamp-2 hover:text-purple-500 z-20">
-          {product.name}
+        <div className="flex justify-between text-sm font-bold my-1 text-black text-start ml-1 hover:text-purple-500 z-20">
+        <p className="truncate md:line-clamp-2 w-full">{product.name}</p>
         </div>
 
         <div className="flex p-1 justify-between items-center relative">
