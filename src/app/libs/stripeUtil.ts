@@ -6,7 +6,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 export async function getProducts() {
   try {
-    let allProducts: Stripe.Product[] = [];
+    const allProducts: Stripe.Product[] = [];
     let hasMore = true;
     let startingAfter: string | undefined = undefined;
 
