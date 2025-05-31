@@ -85,19 +85,7 @@ export default function Catalog() {
     <div className="max-w-7xl mx-auto pt-8 px-1 xl:px-0">
       <h1 className="font-bold text-2xl mt-20">Produtos</h1>
 
-      <form className="max-w-7xl mb-2">
-        <div className="flex gap-4">
-          <label className="pr-4 font-bold md:text-lg text-sm">
-            <input
-              type="checkbox"
-              value="Todos"
-              onChange={handleCheckboxChange}
-              checked={selectedFilters.includes("Todos")}
-            />
-            Todos
-          </label>
-        </div>
-      </form>
+      
 
       <div className="grid grid-cols-3 gap-3 md:grid-cols-3 lg:grid-cols-4 gap-10 xl:gap-6">
         {filteredProducts.length > 0 ? (
