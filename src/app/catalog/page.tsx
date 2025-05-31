@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { useSearchParams } from 'next/navigation'; 
 import Product from "../components/Product";
+import ProductModal from "../components/ProductModal";
 
 // Define o tipo dos produtos
 type ProductType = {
@@ -26,6 +27,7 @@ export default function Catalog() {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<ProductType[]>([]);
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+  const [selectedProduct, setSelectedProduct] = useState<ProductType | null>(null); // 👈 Adicionado
   const searchParams = useSearchParams(); 
   const searchTerm = searchParams?.get("search") || ''; 
 
@@ -44,24 +46,24 @@ export default function Catalog() {
   }, []);
 
   const applyFilters = useCallback(() => {
-  const filtered = products.filter((product) => {
-    const matchesSearch =
-      searchTerm.trim() === '' ||
-      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const filtered = products.filter((product) => {
+      const matchesSearch =
+        searchTerm.trim() === '' ||
+        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        product.description.toLowerCase().includes(searchTerm.toLowerCase());
 
-    const matchesFilters =
-      selectedFilters.length === 0 ||
-      selectedFilters.includes("Todos") ||
-      selectedFilters.some((filter) =>
-        product.description.toLowerCase().includes(filter.toLowerCase())
-      );
+      const matchesFilters =
+        selectedFilters.length === 0 ||
+        selectedFilters.includes("Todos") ||
+        selectedFilters.some((filter) =>
+          product.description.toLowerCase().includes(filter.toLowerCase())
+        );
 
-    return matchesSearch && matchesFilters;
-  });
+      return matchesSearch && matchesFilters;
+    });
 
-  setFilteredProducts(filtered);
-}, [products, searchTerm, selectedFilters]);
+    setFilteredProducts(filtered);
+  }, [products, searchTerm, selectedFilters]);
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = event.target;
@@ -97,20 +99,25 @@ export default function Catalog() {
         </div>
       </form>
 
-      <div className="grid grid-cols-3 gap-3  md:grid-cols-3 lg:grid-cols-4 gap-10 xl:gap-6">
+      <div className="grid grid-cols-3 gap-3 md:grid-cols-3 lg:grid-cols-4 gap-10 xl:gap-6">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
-            <Product key={product.id} product={product} />
+            <div key={product.id} onClick={() => setSelectedProduct(product)}>
+              <Product product={product} />
+            </div>
           ))
         ) : (
-          <p className="text-center col-span-full">
-            Produto não encontrado.
-          </p>
+          <p className="text-center col-span-full">Produto não encontrado.</p>
         )}
       </div>
-      
-  
+
+      {/* Modal */}
+      {selectedProduct && (
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
+      )}
     </div>
-    
   );
 }
