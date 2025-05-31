@@ -69,6 +69,7 @@ function Navbar() {
         }`}
       >
         <ul className='flex flex-col md:flex-row gap-4 text-sm text-gray-600'>
+          <li><Link href='/catalog'>Todos os vestidos</Link></li>
           <li><Link href='/catalog'>Atacado 1</Link></li>
           <li><Link href='/catalog'>Atacado 2</Link></li>
           <li><Link href='/catalog'>Atacado 3</Link></li>
