@@ -65,17 +65,7 @@ export default function Catalog() {
     setFilteredProducts(filtered);
   }, [products, searchTerm, selectedFilters]);
 
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { value, checked } = event.target;
-
-    setSelectedFilters((prevFilters) => {
-      const updatedFilters = checked
-        ? [...prevFilters, value]
-        : prevFilters.filter((filter) => filter !== value);
-
-      return updatedFilters;
-    });
-  };
+ 
 
   useEffect(() => {
     applyFilters();
@@ -87,7 +77,7 @@ export default function Catalog() {
 
       
 
-      <div className="grid grid-cols-3 gap-3 md:grid-cols-3 lg:grid-cols-4 gap-10 xl:gap-6">
+      <div className="grid grid-cols-3 gap-3 md:grid-cols-3 lg:grid-cols-4 xl:gap-6">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <div key={product.id} onClick={() => setSelectedProduct(product)}>
