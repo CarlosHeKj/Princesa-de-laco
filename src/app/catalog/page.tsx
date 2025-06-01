@@ -26,7 +26,8 @@ async function getProducts() {
 export default function Catalog() {
   const [products, setProducts] = useState<ProductType[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<ProductType[]>([]);
-  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+
+const [selectedFilters] = useState<string[]>([]);
   const [selectedProduct, setSelectedProduct] = useState<ProductType | null>(null); // 👈 Adicionado
   const searchParams = useSearchParams(); 
   const searchTerm = searchParams?.get("search") || ''; 
